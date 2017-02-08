@@ -2,8 +2,8 @@ body, html {
 	margin:0;
 	height:100%;
 	background-color: #FFF;
+	font-size: 17px;
 }
-
 header .menu {
   display: flex;
   position:fixed;
@@ -11,13 +11,10 @@ header .menu {
   background-color: rgba(0,0,0,0.7);
   z-index:20;
 }
-
 header nav {
   margin-left: auto;
   margin-right: auto;
-  /*display: flex;*/
 }
-
 header ul.topnav {
   list-style-type: none;
   text-align: center;
@@ -26,12 +23,16 @@ header ul.topnav {
   padding: 0;
   overflow: hidden;
 }
-
 header ul.topnav li {
 	float: left;
 	list-style: none;
 }
-
+header .menu .menu-close{
+	display: none;
+}
+header .menu .menu-open{
+	display: none;
+}
 header ul.topnav li a {
   display: inline-block;
   color: #f2f2f2;
@@ -41,31 +42,23 @@ header ul.topnav li a {
   transition: 0.3s;
   font-size: 17px;
 }
-
-header ul.topnav li a:hover {background-color: #555;}
-
+header ul.topnav li a:hover {
+	background-color: #555;
+}
 header a.icon-menu{
 	height: 25px;
     width: 46px;
 }
-
 header .icon-open{
 	background: url("assets/menu.png") center center;
 	height: 25px;
     width: 30px;
 }
 header .icon-close{
-	background: url("assets/close.png") center center;
 	height: 25px;
     width: 30px;
 }
-/*header{
-	background : #000 url(assets/header.png) no-repeat center top;
-	height: 500px;
-}*/
-
 ul.topnav li.icon {display: none;}
-
 .container-large{
 	width:100%;
 }
@@ -87,6 +80,9 @@ article .article{
 	margin-bottom:3%;
 
 }
+article span{
+	text-decoration: underline;
+}
 article .article.texte{
 	width:50%;
 	margin-right: 10%;
@@ -99,8 +95,8 @@ article .article.publicite{
 	position: relative;
 }
 article .article.publicite img{
-	width: 50%;
-	bottom: -200px;
+	width: 60%;
+	bottom: 0px;
 	left: 0;
 	position: absolute;
 }
@@ -111,6 +107,8 @@ article .float-none{
 	width:60%;
 	height:auto;
 	padding:0;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 #robot .texte-robot{
 	width:100%;
@@ -139,28 +137,19 @@ article .float-none{
 	margin: 0;
 	-webkit-padding-start: 0px;
 }
-
 .parallax.bk-logo {
-    background-image: url("assets/header-bg-2x.png") ;
-
+	background-image: url("assets/header-bg-2x.png") ;
 }
-
 .parallax.logo {
     background: url("assets/logo.png") no-repeat center center;
-	/*height:50%;
-	width:50%;*/
-	/*position:absolute;*/
 }
-
 .parallax.epee {
-    background-image: url("assets/kiloren-2x.jpg");
+	background-image: url("assets/kiloren-2x.jpg");
 	z-index:10;
 }
-
 .parallax.army {
     background-image: url("assets/stormtroopers-2x.jpg");
 }
-
 .parallax {
     height: 100%;
     background-attachment: fixed;
@@ -169,7 +158,6 @@ article .float-none{
     background-size: cover;
 	position:relative;
 }
-
 footer{
 	width: 100%;
 	height:500px;
@@ -184,7 +172,7 @@ footer a:hover{
 	color: #FFF;
 }
 footer .footer{
-	width: 70%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -218,29 +206,137 @@ footer .icons li{
 	width: 25%;
 	margin-left: 5%;
 }
+/*************************************************************/
+/************************ MEDIA QUERIES **********************/
+/*************************************************************/
 
-
-@media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
-  }
+/* tablette en paysage, écran d’ordinateur de taille petite et moyenne */
+@media all and (max-device-width: 1280px)
+{
+	article .article.publicite img {
+		width: 100%;
+	}
 }
 
-@media screen and (max-width:680px) {
-  ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
-  }
+/* smartphone en paysage, tablette en portrait et petite tablette en paysage */
+@media all and (max-device-width: 959px)
+{
+	.parallax {
+		height: 50%;
+	}
+	.parallax.bk-logo {
+		background-image: url("assets/header-bg.png") ;
+	}
+	.parallax.logo {
+		height: 100%;
+	}
+	.parallax.epee {
+		background-image: url("assets/kiloren.jpg");
+		z-index:10;
+	}
+	.parallax.army {
+		background-image: url("assets/stormtroopers.jpg");
+	}
+	footer .col3{
+		width: 50%;
+	}
+	footer .col3:nth-child(4) {
+		float: none;
+		text-align: center;
+		margin-left: auto;
+		margin-right: 0;
+		margin-top: 24%;
+	}
+	footer .col3:nth-child(4) p
+	{
+		float:left;
+	}
+	footer .col3 .icons
+	{
+		float:left;
+		margin-top: 0;
+		width: auto;
+	}
+}
+/* smartphone en portrait */
+@media all and (max-device-width: 479px)
+{
+	body, article{
+		font-size: 24px;
+	}
+	header .dropbtn {
+		background-color: #000;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+	header .dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	header .menu  .menu-close{
+		display: none;
+		position: fixed;
+		left:0;
+	}
+	header .menu .menu-open{
+		display: block;
+		position: fixed;
+		right:0;
+	}
+	header .dropdown-content {
+		display: none;
+		min-width: 200px;
+		right: 20%;
+		overflow: auto;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	header .dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+	header .dropdown-content li {
+		width: 100%;
+		font-size: 4em;
+	}
+	header .dropdown a:hover {
+		background-color: #f1f1f1;
+	}
+	header .show {
+		display:block;
+	}
+	header .dropdown button	{
+		display: block;
+	}
+	header nav {
+		margin-right: 20px;
+	}
+	article .article{
+		float:none;
+	}
+	article .article.texte{
+		width:100%;
+	}
+	article .article.publicite{
+		display: none;
+	}
+	#robot{
+		width:80%;
+	}
+	#robot .texte-robot{
+		font-size: 24px;
+	}
+	#robot h2{
+		font-size: 3em;
+	}
+	#robot .gauche {
+		float: none;
+		width: 100%;
+		margin: 50px 30px 50px 0;
+	}
 }

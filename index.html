@@ -6,40 +6,39 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript" src="script.js"></script>
 		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" />
-		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<header class="parallax bk-logo">
+		<header id="header" class="parallax bk-logo">
 			<div class="menu">
-				<nav class="nav">
-					<ul class="topnav" id="myTopnav">
-						<li><a class="active" href="#">LE COTÉ LUMINEUX</a></li>
-						<li><a href="#">LE COTÉ OBSCUR</a></li>
-						<li><a href="#">L’EMPIRE</a></li>
-						<li><a href="#">LES DROÏDES</a></li>
-						<li><a href="#">LES EWOKS</a></li>
-						<li><a href="#">JABBA LE HUTT</a></li>
-						<li class="icon">
-							<a class="icon-menu" href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()"><div class="icon-open"></div></a>
-						</li>
-					</ul>
+				<nav class="nav dropdown">
+						<button onclick="Close()" class="dropbtn menu-close"><img class="icon-close" src="assets/close.png" alt="icon-close"></button>
+						<ul class="topnav dropdown-content" id="myDropdown">
+						  <li><a class="active" href="#">LE COTÉ LUMINEUX</a></li>
+						  <li><a href="#">LE COTÉ OBSCUR</a></li>
+						  <li><a href="#">L’EMPIRE</a></li>
+						  <li><a href="#">LES DROÏDES</a></li>
+						  <li><a href="#">LES EWOKS</a></li>
+						  <li><a href="#">JABBA LE HUTT</a></li>
+					  	</ul>
+					  	<button onclick="Open()" class="dropbtn menu-open"><img class="icon-close" src="assets/menu.png" alt="icon-close"></button>
 				</nav>
 			</div>
-			<div class="parallax logo"></div>
+			<div id="logo" class="parallax logo"></div>
 		</header>
-		<article>
-			<div class="article texte">
+		<article id="publicite">
+			<div class="article texte" id="text-publicite">
 				<p><strong>Star Wars, The Force Awakens</strong></p>
 				<p>Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l’oppression. Les membres de l'Alliance rebelle, devenus la « Résistance », combattent les vestiges de l'Empire réunis sous la bannière du « Premier Ordre ».</p>
-				<p>Un mystérieux guerrier, Kylo Ren, semble vouer un culte à Dark Vador et pourchasse les ennemis du Premier Ordre à travers la galaxie. Au même moment, une jeune femme nommée Rey, pilleuse d'épaves sur la planète désertique Jakku, va faire la rencontre de Finn, un Stormtrooper en fuite, une rencontre qui bouleversera sa vie.</p>
-				<p>Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l’oppression. Les membres de l'Alliance rebelle, devenus la « Résistance », combattent les vestiges de l'Empire réunis sous la bannière du « Premier Ordre ».</p>
-				<p>Un mystérieux guerrier, Kylo Ren, semble vouer un culte à Dark Vador et pourchasse les ennemis du Premier Ordre à travers la galaxie. Au même moment, une jeune femme nommée Rey, pilleuse d'épaves sur la planète désertique Jakku, va faire la rencontre de Finn, un Stormtrooper en fuite, une rencontre qui bouleversera sa vie.</p>
+				<p>Un mystérieux guerrier, <span>Kylo Ren</span>, semble vouer un culte à <span>Dark Vador</span> et pourchasse les ennemis du Premier Ordre à travers la galaxie. Au même moment, une jeune femme nommée Rey, pilleuse d'épaves sur la planète désertique Jakku, va faire la rencontre de Finn, un <span>Stormtrooper</span> en fuite, une rencontre qui bouleversera sa vie.</p>
+				<p>Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l’oppression. Les membres de l'Alliance rebelle, devenus la « <span>Résistance</span> », combattent les vestiges de l'Empire réunis sous la bannière du « <span>Premier Ordre</span> ».</p>
+				<p>Un mystérieux guerrier, Kylo Ren, semble vouer un culte à <span>Dark Vador</span> et pourchasse les ennemis du Premier Ordre à travers la galaxie. Au même moment, une jeune femme nommée Rey, pilleuse d'épaves sur la planète désertique Jakku, va faire la rencontre de Finn, un Stormtrooper en fuite, une rencontre qui bouleversera sa vie.</p>
 				<p>Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l’oppression. Les membres de l'Alliance rebelle, devenus la « Résistance », combattent les vestiges de l'Empire réunis sous la bannière du « Premier Ordre ».</p>
 				<p>Un mystérieux guerrier, Kylo Ren, semble vouer un culte à Dark Vador et pourchasse les ennemis du Premier Ordre à travers la galaxie. Au même moment, une jeune femme nommée Rey, pilleuse d'épaves sur la planète désertique Jakku, va faire la rencontre de Finn, un Stormtrooper en fuite, une rencontre qui bouleversera sa vie.</p>
 			</div>
 			<div class="article publicite">
-				<img id="publicite" src="assets/ad.jpg" alt="publicite">
+				<img id="img-publicite" src="assets/ad.jpg" alt="publicite">
 			</div>
 			<div class="float-none"></div>
 		</article>
@@ -48,7 +47,7 @@
 			<h2>A long time ago, in a galaxy far, far away…</h2>
 			<img class="gauche" src="assets/r2d2_c3p0-2x.jpg" alt="robot">
 			<div class="droite texte-robot">
-				<p>La Guerre des étoiles (titre original Star Wars, soit littéralement Guerres Stellaires ) est une épopée cinématographique de science-fiction créée par George Lucas, considérée comme un élément phare du space opera. Prévue à la base pour être une suite de trois trilogies (triptyque), Lucas fut contraint, par manque de moyens techniques, de commencer par la seconde trilogie (l'Épisode IV - Un nouvel espoir) en 1977. La série connut un succès phénoménal partout dans le monde et engendra une très importante communauté de fans.</p>
+				<p>La <strong>Guerre des étoiles</strong> (titre original <strong>Star Wars</strong>, soit littéralement Guerres Stellaires ) est une épopée cinématographique de science-fiction créée par George Lucas, considérée comme un élément phare du space opera. Prévue à la base pour être une suite de trois trilogies (triptyque), Lucas fut contraint, par manque de moyens techniques, de commencer par la seconde trilogie (l'Épisode IV - Un nouvel espoir) en 1977. La série connut un succès phénoménal partout dans le monde et engendra une très importante communauté de fans.</p>
 				<p>Sans prétendre expliquer le succès du premier film (s'il y avait une recette, cela se saurait), on peut, toutefois, noter que, malgré le manque de moyens (le budget était relativement modeste, les acteurs presque inconnus) :</p>
 				<ul>
 					<li>- Il fait appel à des références connues et appréciées des jeunes de l'époque : films de cape et d'épée, westerns, péplums, contes de fées et même le Seigneur des Anneaux de J.R.R. Tolkien ; cette œuvre n'apparaît pas comme de la science-fiction au sens strict mais plutôt comme du space fantasy.</li>
